@@ -53,9 +53,11 @@
                     <instructions>
                         <Bundle-SymbolicName>org.apache.shiro.core</Bundle-SymbolicName>
                         <Export-Package>org.apache.shiro*;version=${project.version}</Export-Package>
+                        <!-- patch found here to not depend on org.apache.commons.configuration2.interpol : https://issues.apache.org/jira/browse/SHIRO-624 -->
                         <Import-Package>
                             org.apache.shiro*;version="${shiro.osgi.importRange}",
                             org.apache.commons.beanutils*;resolution:=optional,
+                            org.apache.commons.configuration2.interpol;resolution:=optional,
                             *
                         </Import-Package>
                     </instructions>
